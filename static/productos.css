@@ -1,0 +1,86 @@
+body{
+	margin: 0;
+	display: flex;
+	font-family: sans-serif;
+}
+aside table{
+	position: relative;
+	top: 90px;
+	left: 20px;
+	height: 600px;
+	width: 600px;
+	margin: auto;
+	display: flex;
+	animation: slide;
+	animation-duration: 500ms;
+}
+aside table tr{
+	margin: 5px;
+	display: flex;
+}
+aside table tr td:hover, aside table tr td a:hover{
+	background: #B086FF;
+}
+aside table tr td, aside table tr td a{
+	margin: 5px;
+	height: 80px !important;
+	width: 200px !important;
+	background: #8443FF;
+	display: flex;
+	text-decoration: none;
+	font-size: 12px;
+}
+@keyframes slide{
+	from{
+		left: -100px;
+		opacity: 0;
+	}
+	to{
+		left: 20px;
+		opacity: 1;
+	}
+}
+aside table tr td p, aside table tr td a{
+	margin: auto;
+	color: white;
+}
+#contenedor{
+	height: 500px;
+	width: 850px;
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	display: flex;
+}
+.inputs{
+	width: 250px;
+	border: none;
+	border-bottom: 1.5px solid #8443FF;
+	margin: auto;
+	display: block;
+	margin-top: 20px;
+}
+#producto{
+	margin-top: 20px;
+}
+.botones{
+	height: 30px;
+	width: 90px;
+	color: white;
+	background: #8443FF;
+	border: none;
+	margin-top: 15px;
+	margin-left: 40px;
+}
+#imagen{
+	position: absolute;
+	right: 70px;
+	top: 80px;
+	height: 250px;
+	width: 250px;
+	border: 1px solid #8443FF;
+}
+#contenedor form{
+	position: absolute;
+	top: 90px;
+}

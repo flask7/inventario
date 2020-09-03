@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../static/ventas.css">
+</head>
+<body>
+	<p id="pruebas">Productos</p>
+	<aside>
+		<table>
+			<tr>
+				<td>
+					<a href="/inventario">
+						<p>INVENTARIO</p>
+					</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="/productos">
+						<p>REGISTRO DE PRODUCTOS</p>
+					</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="/ventas">
+						<p>VENTAS</p>
+					</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="/tasa">
+						<p>TASA DEL DÍA</p>
+					</a>
+				</td>
+			</tr>
+		</table>
+	</aside>
+	<div id="total">
+		<div id="tcompra">
+			<h1>TOTAL:</h1>
+		</div>
+		<div id="tcompra2">
+			<h3 id="monto">0.00<span>BsS</span></h3>
+		</div>
+	</div>
+	<div id="contenedor">
+		<input type="input" name="" placeholder="Buscar producto" id="buscador">
+		<img src="{{ producto }}" id="muestra">
+		<label id="nombre">NOMBRE DE PRODUCTO: <span>Carne de res</span></label>
+		<input type="number" name="cantidad" placeholder="CANTIDAD" id="cantidad">
+		<label id="descripcion">
+			DESCRIPCIÓN:
+			<span id="desc">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
+			</span>
+		</label>
+		<input type="button" name="" value="AÑADIR" id="add">
+		<button id="comprar">PROCESAR COMPRA</button>
+		<button id="descartar">DESCARTAR</button>
+	</div>
+</body>
+</html>

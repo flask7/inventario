@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../static/productos.css">
+</head>
+<body>
+	<aside>
+		<table>
+			<tr>
+				<td>
+					<a href="/inventario">
+						<p>INVENTARIO</p>
+					</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="/productos">
+						<p>REGISTRO DE PRODUCTOS</p>
+					</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="/ventas">
+						<p>VENTAS</p>
+					</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="/tasa">
+						<p>TASA DEL DÍA</p>
+					</a>
+				</td>
+			</tr>
+		</table>
+	</aside>
+	<div id="contenedor">
+		<form>
+			<input type="number" name="codigo" placeholder="CÓDIGO" class="inputs" required>
+			<input type="text" name="nombre" placeholder="NOMBRE DE PRODUCTO" class="inputs" required>
+			<input type="text" name="descripcion" placeholder="DESCRIPCIÓN DEL PRODUCTO" class="inputs" required>
+			<input type="number" name="cantidad" placeholder="CANTIDAD DE PRODUCTO" class="inputs" required>
+			<input type="number" name="precio" placeholder="PRECIO EN $" class="inputs" required>
+			<input type="file" name="producto" id="producto" accept="image/*" style="display: block;">
+			<input type="submit" name="" value="REGISTRAR" class="botones">
+			<input type="reset" name="" value="LIMPIAR" class="botones">
+		</form>
+		<img src="" id="imagen">
+		<script type="text/javascript">
+			const reader = new FileReader();
+			const fileInput = document.getElementById("producto");
+			const img = document.getElementById("imagen");
+			reader.onload = e => {
+			  img.src = e.target.result;
+			}
+			fileInput.addEventListener('change', e => {
+			  const f = e.target.files[0];
+			  reader.readAsDataURL(f);
+			})
+		</script>
+	</div>
+</body>
+</html>

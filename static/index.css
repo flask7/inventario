@@ -1,0 +1,32 @@
+body{
+	margin: 0;
+	display: flex;
+	font-family: sans-serif;
+}
+table{
+	position: relative;
+	top: 150px;
+	height: 600px;
+	width: 600px;
+	margin: auto;
+	display: flex;
+}
+table tr{
+	margin: 5px;
+	display: flex;
+}
+table tr td:hover{
+	background: #B086FF;
+}
+table tr td, table tr td a{
+	margin: 5px;
+	height: 150px !important;
+	width: 250px !important;
+	background: #8443FF;
+	display: flex;
+	text-decoration: none;
+}
+table tr td p, table tr td a{
+	margin: auto;
+	color: white;
+}
