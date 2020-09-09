@@ -6,6 +6,60 @@
 	<link rel="stylesheet" type="text/css" href="../static/productos.css">
 </head>
 <body>
+	<script type="text/javascript">
+		function registrar_producto() {
+
+			let barra = document.getElementById('barra');
+			let codigo = document.getElementById('codigo').value;
+			let nombre = document.getElementById('nombre').value;
+			let descripcion = document.getElementById('descripcion').value;
+			let cantidad = document.getElementById('cantidad').value;
+			let precio = document.getElementById('precio').value;
+			let producto = document.getElementById('producto');
+			let xhr = new XMLHttpRequest();
+			let json = JSON.stringify({
+			  codigo: codigo,
+			  nombre: nombre,
+			  descripcion: descripcion,
+			  cantidad: cantidad,
+			  precio: precio,
+			  producto: producto.files
+			});
+
+			console.log(producto.files);
+
+			xhr.open('POST', 'http://localhost:5000/productosv', true);
+
+			barra.style.display = 'block';
+			xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+			xhr.send(json);
+
+			xhr.upload.addEventListener('progress', function(e) {
+
+				let porcentaje = (e.loaded / e.total) * 100;
+				
+				barra.style.width = porcentaje + '%';
+
+			});
+
+			barra.style.display = 'none';
+
+			xhr.onload = function() {
+
+				 if (xhr.status == 200) {
+
+			      alert("Producto registrado satisfactoriamente");
+
+			    } else {
+
+			      alert("Error " + this.status);
+
+			    }
+			};
+
+		}
+	</script>
+	<div id="barra"></div>
 	<aside>
 		<table>
 			<tr>
@@ -40,13 +94,13 @@
 	</aside>
 	<div id="contenedor">
 		<form>
-			<input type="number" name="codigo" placeholder="CÓDIGO" class="inputs" required>
-			<input type="text" name="nombre" placeholder="NOMBRE DE PRODUCTO" class="inputs" required>
-			<input type="text" name="descripcion" placeholder="DESCRIPCIÓN DEL PRODUCTO" class="inputs" required>
-			<input type="number" name="cantidad" placeholder="CANTIDAD DE PRODUCTO" class="inputs" required>
-			<input type="number" name="precio" placeholder="PRECIO EN $" class="inputs" required>
+			<input type="number" name="codigo" id="codigo" placeholder="CÓDIGO" class="inputs" required>
+			<input type="text" name="nombre" id="nombre" placeholder="NOMBRE DE PRODUCTO" class="inputs" required>
+			<input type="text" name="descripcion" id="descripcion" placeholder="DESCRIPCIÓN DEL PRODUCTO" class="inputs" required>
+			<input type="number" step="0,01" name="cantidad" id="cantidad" placeholder="CANTIDAD DE PRODUCTO" class="inputs" required>
+			<input type="number" step="0,01" name="precio" id="precio" placeholder="PRECIO EN $" class="inputs" required>
 			<input type="file" name="producto" id="producto" accept="image/*" style="display: block;">
-			<input type="submit" name="" value="REGISTRAR" class="botones">
+			<input type="button" name="" value="REGISTRAR" class="botones" onclick="registrar_producto()">
 			<input type="reset" name="" value="LIMPIAR" class="botones">
 		</form>
 		<img src="" id="imagen">
@@ -64,4 +118,4 @@
 		</script>
 	</div>
 </body>
-</html>
+</html> 

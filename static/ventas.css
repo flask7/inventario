@@ -181,3 +181,33 @@ aside table tr td p, aside table tr td a{
 	width: 300px;
 	font-size: 14px;
 }
+#productos{
+	position: absolute;
+	top: 300px;
+	right: 690px;
+	height: 300px;
+	width: 300px;
+	border: 2px solid #8443FF;
+	animation: aparecer;
+	animation-duration: 500ms;
+	overflow-y: scroll;
+}
+#theader{
+	color: white;
+	background: #8443FF;
+	height: auto;
+	width: 100%;
+	top: 0;
+	left: 0;
+	float: right;
+}
+#fila{
+	border-bottom: 1px solid gray !important;
+}
+#imgp{
+	height: 20px;
+	width: 250px;
+	background: red;
+	color: white;
+	text-align: center;
+}

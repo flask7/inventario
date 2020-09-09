@@ -1,9 +1,76 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
 	<title></title>
+	<link rel="stylesheet" type="text/css" href="../static/tasa.css">
 </head>
 <body>
-	<p>Tasa funciona!</p>
+	<script type="text/javascript">
+
+		function enviar_tasa() {
+
+			let tasa = document.getElementById('tasa').value;
+			let xhr = new XMLHttpRequest();
+			let json = JSON.stringify({
+			  valor: tasa
+			});
+
+			xhr.open('POST', 'http://localhost:5000/tasav', true);
+			xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+			xhr.send(json);
+
+			xhr.onload = function() {
+
+				 if (xhr.status == 200) {
+
+			      alert("Tasa establecida exitosamente en BsS " + tasa);
+
+			    } else {
+
+			      alert("Error " + this.status);
+
+			    }
+			};
+
+		}
+
+	</script>
+	<h1>INGRESE PRECIO DEL DOLAR AL CAMBIO DEL DÍA</h1>
+	<input type="number" step="0,01" name="" id="tasa" placeholder="BsS">
+	<button id="enviar" onclick="enviar_tasa()">ESTABLECER</button>
+	<aside>
+		<input type="text" name="buscador" placeholder="Buscar producto" id="buscador">
+		<table>
+			<tr>
+				<td>
+					<a href="/inventario">
+						<p>INVENTARIO</p>
+					</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="/productos">
+						<p>REGISTRO DE PRODUCTOS</p>
+					</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="/ventas">
+						<p>VENTAS</p>
+					</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="/tasa">
+						<p>TASA DEL DÍA</p>
+					</a>
+				</td>
+			</tr>
+		</table>
+	</aside>
 </body>
 </html>

@@ -2,17 +2,36 @@ body{
 	margin: 0;
 	display: flex;
 	font-family: sans-serif;
+	display: flex;
 }
-#barra{
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 2px;
-	width: 0%;
-	display: none;
-	border-top-left-radius: 10px;
-	border-bottom-left-radius: 10px;
+h1{
 	background: #8443FF;
+	color: white;
+	width: 100%;
+	position: absolute;
+	margin: auto;
+	text-align: center;
+}
+#tasa{
+	position: absolute;
+	top: 220px;
+	left: 500px;
+	margin: auto;
+	width: 300px;
+	border: none;
+	border-bottom: 1.5px solid #8443FF;
+	z-index: 1000;
+}
+#enviar{
+	position: absolute;
+	top: 320px;
+	left: 500px;
+	margin: auto;
+	border: none;
+	background: #8443FF;
+	color: white;
+	height: 35px;
+	z-index: 1000;
 }
 aside table{
 	position: relative;
@@ -54,44 +73,4 @@ aside table tr td, aside table tr td a{
 aside table tr td p, aside table tr td a{
 	margin: auto;
 	color: white;
-}
-#contenedor{
-	height: 500px;
-	width: 850px;
-	position: absolute;
-	right: 20px;
-	top: 20px;
-	display: flex;
-}
-.inputs{
-	width: 250px;
-	border: none;
-	border-bottom: 1.5px solid #8443FF;
-	margin: auto;
-	display: block;
-	margin-top: 20px;
-}
-#producto{
-	margin-top: 20px;
-}
-.botones{
-	height: 30px;
-	width: 90px;
-	color: white;
-	background: #8443FF;
-	border: none;
-	margin-top: 15px;
-	margin-left: 40px;
-}
-#imagen{
-	position: absolute;
-	right: 70px;
-	top: 80px;
-	height: 250px;
-	width: 250px;
-	border: 1px solid #8443FF;
-}
-#contenedor form{
-	position: absolute;
-	top: 90px;
 }
